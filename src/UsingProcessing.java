@@ -2,7 +2,7 @@ import processing.core.PApplet;
 
 public class UsingProcessing extends PApplet {
     int n;
-    Fibonacci sFibo = new Fibonacci(this);
+    Sequence sequence;
 
     public static void main(String[] args) {
         PApplet.main("UsingProcessing");
@@ -13,16 +13,17 @@ public class UsingProcessing extends PApplet {
     }
 
     public void setup() {
-        background(255, 0, 0);
+        background(53,59,72);
         n = 7;
+        sequence = new Fibonacci(this);
     }
 
     public void draw() {
-        sFibo.compute(n);
+        sequence.compute(n);
     }
 
     public void mouseReleased() {
-        sFibo.display(n);
+        sequence.display(n);
     }
 }
 

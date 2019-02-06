@@ -1,12 +1,12 @@
 import processing.core.PApplet;
 
-public class Fibonacci {
-    PApplet parent;
+public class Fibonacci extends Sequence {
 
     Fibonacci(PApplet parent) {
-        this.parent = parent;
+        super(parent);
     }
 
+    @Override
     float compute(float n) {
         if (n == 1)
             return 0;
@@ -17,13 +17,14 @@ public class Fibonacci {
         return -1;
     }
 
+    @Override
     void display(float term) {
         float x = (parent.height/compute(term))-25;
         float r = parent.random(255);
         float g = parent.random(255);
         float b = parent.random(255);
 
-        parent.stroke(#f5f6fa);
+        parent.stroke(245,246,250);
         parent.strokeWeight(5);
 
         parent.translate((parent.width/2)+2*x, (parent.height/2)+x);
