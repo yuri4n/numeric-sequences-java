@@ -1,7 +1,8 @@
 import processing.core.PApplet;
 
 public class UsingProcessing extends PApplet {
-    Ellipses e = new Ellipses(this);
+    int n;
+    Fibonacci sFibo = new Fibonacci(this);
 
     public static void main(String[] args) {
         PApplet.main("UsingProcessing");
@@ -13,12 +14,15 @@ public class UsingProcessing extends PApplet {
 
     public void setup() {
         background(255, 0, 0);
-        ellipseMode(CENTER);
-        ellipse(height / 2, width / 2, 50, 50);
+        n = 7;
     }
 
     public void draw() {
-        e.display();
+        sFibo.compute(n);
+    }
+
+    public void mouseReleased() {
+        sFibo.display(n);
     }
 }
 
